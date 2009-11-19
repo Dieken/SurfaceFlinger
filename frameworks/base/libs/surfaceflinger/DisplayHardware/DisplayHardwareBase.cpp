@@ -44,6 +44,9 @@
 
 #ifndef HAVE_GETTID
 # define gettid getpid
+#else
+#include <sys/syscall.h>
+#define gettid() ((long)syscall(SYS_gettid))
 #endif
 
 // ----------------------------------------------------------------------------

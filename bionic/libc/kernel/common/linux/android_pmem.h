@@ -13,6 +13,7 @@
 #define _ANDROID_PMEM_H_
 
 #include <stdint.h>
+#include <sys/types.h>
 
 #ifndef __user
 #define __user

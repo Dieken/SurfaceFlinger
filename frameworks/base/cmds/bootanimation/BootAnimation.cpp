@@ -123,6 +123,7 @@ status_t BootAnimation::initTexture(Texture* texture, AssetManager& assets,
 
 status_t BootAnimation::readyToRun() {
     mAssets.addDefaultAssets();
+    mAssets.addAssetPath(String8("."), NULL);
 
     DisplayInfo dinfo;
     status_t status = session()->getDisplayInfo(0, &dinfo);

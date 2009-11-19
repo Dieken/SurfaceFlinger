@@ -4,6 +4,7 @@
 #ifndef _BINDER_H_
 #define _BINDER_H_
 
+#include <stdint.h>
 #include <sys/ioctl.h>
 #include <linux/binder.h>
 

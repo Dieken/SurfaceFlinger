@@ -39,13 +39,13 @@
  * HAVE_WIN32_THREADS - use Win32 thread primitives.
  *  -- combine HAVE_CREATETHREAD, HAVE_CREATEMUTEX, and HAVE__BEGINTHREADEX
  */
-#define HAVE_PTHREADS
+#define HAVE_PTHREADS 1
 
 /*
  * Do we have the futex syscall?
  */
 
-#define HAVE_FUTEX
+#define HAVE_FUTEX 1
 
 /*
  * Process creation model.  Choose one:
@@ -53,14 +53,14 @@
  * HAVE_FORKEXEC - use fork() and exec()
  * HAVE_WIN32_PROC - use CreateProcess()
  */
-#define HAVE_FORKEXEC
+#define HAVE_FORKEXEC 1
 
 /*
  * Process out-of-memory adjustment.  Set if running on Linux,
  * where we can write to /proc/<pid>/oom_adj to modify the out-of-memory
  * badness adjustment.
  */
-#define HAVE_OOM_ADJ
+#define HAVE_OOM_ADJ 1
 
 /*
  * IPC model.  Choose one:
@@ -70,7 +70,7 @@
  * HAVE_WIN32_IPC - use Win32 IPC (CreateSemaphore, CreateFileMapping).
  * HAVE_ANDROID_IPC - use Android versions (?, mmap).
  */
-#define HAVE_SYSV_IPC
+#define HAVE_SYSV_IPC 1
 
 /*
  * Memory-mapping model. Choose one:
@@ -78,12 +78,12 @@
  * HAVE_POSIX_FILEMAP - use the Posix sys/mmap.h
  * HAVE_WIN32_FILEMAP - use Win32 filemaps
  */
-#define  HAVE_POSIX_FILEMAP
+#define  HAVE_POSIX_FILEMAP 1
 
 /*
  * Define this if you have <termio.h>
  */
-#define  HAVE_TERMIO_H
+#define  HAVE_TERMIO_H 1
 
 /*
  * Define this if you build against MSVCRT.DLL
@@ -93,28 +93,28 @@
 /*
  * Define this if you have sys/uio.h
  */
-#define  HAVE_SYS_UIO_H
+#define  HAVE_SYS_UIO_H 1
 
 /*
  * Define this if your platforms implements symbolic links
  * in its filesystems
  */
-#define HAVE_SYMLINKS
+#define HAVE_SYMLINKS 1
 
 /*
  * Define this if we have localtime_r().
  */
-#define HAVE_LOCALTIME_R
+#define HAVE_LOCALTIME_R 1
 
 /*
  * Define this if we have gethostbyname_r().
  */
-#define HAVE_GETHOSTBYNAME_R
+#define HAVE_GETHOSTBYNAME_R 1
 
 /*
  * Define this if we have ioctl().
  */
-#define HAVE_IOCTL
+#define HAVE_IOCTL 1
 
 /*
  * Define this if we want to use WinSock.
@@ -127,18 +127,18 @@
  * Desktop Linux has this in librt, but it's broken in goobuntu, yielding
  * mildly or wildly inaccurate results.
  */
-/*#define HAVE_POSIX_CLOCKS*/
+#define HAVE_POSIX_CLOCKS 1
 
 /*
  * Define this if we have pthread_cond_timedwait_monotonic() and
  * clock_gettime(CLOCK_MONOTONIC).
  */
-/* #define HAVE_TIMEDWAIT_MONOTONIC */
+#define HAVE_TIMEDWAIT_MONOTONIC 1
 
 /*
  * Define this if we have linux style epoll()
  */
-#define HAVE_EPOLL
+#define HAVE_EPOLL 1
 
 /*
  * Endianness of the target machine.  Choose one:
@@ -147,8 +147,8 @@
  * HAVE_LITTLE_ENDIAN -- we are little endian.
  * HAVE_BIG_ENDIAN -- we are big endian.
  */
-#define HAVE_ENDIAN_H
-#define HAVE_LITTLE_ENDIAN
+#define HAVE_ENDIAN_H 1
+#define HAVE_LITTLE_ENDIAN 1
 
 /*
  * We need to choose between 32-bit and 64-bit off_t.  All of our code should
@@ -181,21 +181,27 @@
 /*
  * Defined if we have the gettid() system call.
  */
-/* #define HAVE_GETTID */
+#define HAVE_GETTID 1
 
 /* 
  * Defined if we have the sched_setscheduler() call
  */
-#define HAVE_SCHED_SETSCHEDULER
+#define HAVE_SCHED_SETSCHEDULER 1
 
 /*
  * Add any extra platform-specific defines here.
  */
+//#define __linux__
 
 /*
  * Define if we have <malloc.h> header
  */
-#define HAVE_MALLOC_H
+#define HAVE_MALLOC_H 1
+
+/* 
+ * Define if we're running on *our* linux on device or emulator.
+ */
+#define HAVE_ANDROID_OS 1
 
 /*
  * Define if we have Linux-style non-filesystem Unix Domain Sockets
@@ -204,13 +210,13 @@
 /*
  * What CPU architecture does this platform use?
  */
-#define ARCH_X86
+#define ARCH_X86 1
 
 
 /*
  * Define if we have Linux's inotify in <sys/inotify.h>.
  */
-/*#define HAVE_INOTIFY 1*/
+#define HAVE_INOTIFY 1
 
 /*
  * Define if we have madvise() in <sys/mman.h>
@@ -236,7 +242,7 @@
  * Define if system provides a system property server (should be
  * mutually exclusive with HAVE_LIBC_SYSTEM_PROPERTIES).
  */
-#define HAVE_SYSTEM_PROPERTY_SERVER
+#define HAVE_SYSTEM_PROPERTY_SERVER 1
 
 /*
  * sprintf() format string for shared library naming.
@@ -251,7 +257,7 @@
 /*
  * Do we have the sigaction flag SA_NOCLDWAIT?
  */
-#define HAVE_SA_NOCLDWAIT
+#define HAVE_SA_NOCLDWAIT 1
 
 /*
  * The default path separator for the platform
@@ -261,7 +267,7 @@
 /*
  * Is the filesystem case sensitive?
  */
-#define OS_CASE_SENSITIVE
+#define OS_CASE_SENSITIVE 1
 
 /*
  * Define if <sys/socket.h> exists.
@@ -271,7 +277,7 @@
 /*
  * Define if the strlcpy() function exists on the system.
  */
-/* #define HAVE_STRLCPY 1 */
+/*#define HAVE_STRLCPY 1 */
 
 /*
  * Define if prctl() exists

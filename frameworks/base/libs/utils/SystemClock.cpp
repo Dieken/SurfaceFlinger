@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+#ifdef HAVE_ANDROID_OS
+/* linux-x86 doesn't have /dev/alarm    */
+#undef HAVE_ANDROID_OS
+#endif
 
 /*
  * System clock functions.

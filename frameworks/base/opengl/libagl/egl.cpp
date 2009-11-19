@@ -58,7 +58,8 @@ const unsigned int NUM_DISPLAYS = 1;
 static pthread_mutex_t gInitMutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_mutex_t gErrorKeyMutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_key_t gEGLErrorKey = -1;
-#ifndef HAVE_ANDROID_OS
+//#ifndef HAVE_ANDROID_OS
+#ifndef HAVE_ANDROID_TLS
 namespace gl {
 pthread_key_t gGLKey = -1;
 }; // namespace gl
@@ -987,7 +988,8 @@ using namespace android;
 
 EGLDisplay eglGetDisplay(NativeDisplayType display)
 {
-#ifndef HAVE_ANDROID_OS
+//#ifndef HAVE_ANDROID_OS
+#ifndef HAVE_ANDROID_TLS
     // this just needs to be done once
     if (gGLKey == -1) {
         pthread_mutex_lock(&gInitMutex);

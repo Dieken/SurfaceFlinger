@@ -23,7 +23,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "config.h"
+
+// In external/giflib
+//#include "config.h"
 
 #include "EmojiFactory.h"
 #include "EmojiFont.h"

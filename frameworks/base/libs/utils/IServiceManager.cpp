@@ -61,6 +61,12 @@ bool checkCallingPermission(const String16& permission, int32_t* outPid, int32_t
     if (outPid) *outPid = pid;
     if (outUid) *outUid= uid;
     
+// Err, PermissionController is Java code, we don't want it.
+// See services/java/com/android/server/am/ActivityManagerService.java
+#if 1
+    LOGW("!!!! Fake permission: %s, uid=%d, gid=%d", String8(permission).string(), uid, pid);
+    return true;
+#else
     sp<IPermissionController> pc;
     gDefaultServiceManagerLock.lock();
     pc = gPermissionController;
@@ -113,6 +119,7 @@ bool checkCallingPermission(const String16& permission, int32_t* outPid, int32_t
             gDefaultServiceManagerLock.unlock();
         }
     }
+#endif
 }
 
 // ----------------------------------------------------------------------

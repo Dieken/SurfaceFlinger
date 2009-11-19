@@ -27,6 +27,7 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 
+#include <linux/types.h>
 #include <linux/ashmem.h>
 #include <cutils/ashmem.h>
 

@@ -41,7 +41,7 @@
 # include <sys/inotify.h>
 #endif
 #ifdef HAVE_ANDROID_OS
-# include <sys/limits.h>        /* not part of Linux */
+//# include <sys/limits.h>        /* not part of Linux */
 #endif
 #include <sys/poll.h>
 #include <sys/ioctl.h>
