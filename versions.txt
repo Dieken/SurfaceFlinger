@@ -1,0 +1,9 @@
+4e30c09e57a0351daff70f6657794569445be21c  bionic
+de2fc73cc9115f5b7259b07553810ad32413475a  dalvik
+ad0afb3c8552032c3065cea4a98ed1ec09d51101  external/skia
+a74dc60c96d5a4571519609ad62c326bbf553420  frameworks/base
+4c10be9fd6d06fe8cdd93d8966ffbb9942c87aad  frameworks/opt/emoji
+f0a3c389eba7edc0631b8de60fae41a73432306b  hardware/libhardware
+a41a2d57909b7cebe8a76d7b9612202381571ce0  hardware/libhardware_legacy
+67121e09d894c2f971bb01451371c0fb9d00adcc  hardware/ril
+74d7ff8cfd490852d3df1c4b9d8a21beed619caa  system/core
