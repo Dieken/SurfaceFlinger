@@ -1,9 +1,11 @@
 bionic/libc/kernel/common/linux/android_pmem.h
 external/skia/emoji/EmojiFont.cpp
+frameworks/base/cmds/bootanimation/BootAnimation.cpp
 frameworks/base/cmds/servicemanager/binder.h
 frameworks/base/include/private/opengles/gl_context.h
 frameworks/base/libs/surfaceflinger/DisplayHardware/DisplayHardwareBase.cpp
 frameworks/base/libs/ui/EventHub.cpp
+frameworks/base/libs/utils/IServiceManager.cpp
 frameworks/base/libs/utils/SystemClock.cpp
 frameworks/base/opengl/libagl/egl.cpp
 system/core/include/arch/linux-x86/AndroidConfig.h
