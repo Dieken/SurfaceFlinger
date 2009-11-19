@@ -1,0 +1,30 @@
+libexpat-dev
+libicu-dev
+libfreetype6-dev
+libgif-dev
+libjpeg-dev
+libpng-dev
+zlib1g-dev
+
+aptitude install v86d
+
+modprobe uvesafb
+modprobe logger
+ln /dev/log /dev/log2
+rm /dev/log
+mkdir /dev/log
+ln /dev/log_main /dev/log/main
+ln /dev/log_events /dev/log/events
+ln /dev/log_radio /dev/log/radio
+
+export ANDROID_ROOT=/system
+#export ANDROID_DATA=/data
+#export ANDROID_ASSETS=/system/app
+#export ANDROID_BOOTLOGO=1
+#export BOOTCLASSPATH=/system/framework/core.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar
+#export EXTERNAL_STORAGE=/sdcard
+#export LD_LIBRARY_PATH=/system/lib
+#export PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+
+AssetManager::addDefaultAssets()
+    $ANDROID_ROOT/framework/framework-res.apk
