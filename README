@@ -1,21 +1,53 @@
-libexpat-dev
-libicu-dev
-libfreetype6-dev
-libgif-dev
-libjpeg-dev
-libpng-dev
-zlib1g-dev
+1. build android
 
-aptitude install v86d
+Require cmake (>= 2.6) and these packages:
+    libexpat-dev
+    libicu-dev
+    libfreetype6-dev
+    libgif-dev
+    libjpeg-dev
+    libpng-dev
+    zlib1g-dev
 
-modprobe uvesafb
-modprobe logger
-ln /dev/log /dev/log2
-rm /dev/log
-mkdir /dev/log
-ln /dev/log_main /dev/log/main
-ln /dev/log_events /dev/log/events
-ln /dev/log_radio /dev/log/radio
+Pass building on Debian Sid with GCC 4.1.3.
+
+$ mkdir build && cd build && ccmake ../SurfaceFlinger
+$ make
+
+
+2. build linux kernel
+
+$ git clone git://android.git.kernel.org/kernel/common.git kernel
+$ cd kernel && git checkout android-2.6.29
+$ cp ../SurfaceFlinger/kernel/android-2.6.29-config .config
+$ make oldconfig
+$ make
+# make deb-pkg          # require root privilege, stupid...
+
+On your test machine(you can test with VirtualBox):
+# dpkg -i ../linux*.deb
+
+
+3. run
+
+# aptitude install v86d     # required by uvesafb
+# modprobe uvesafb
+# modprobe logger
+# ln /dev/log /dev/log2
+# rm /dev/log
+# mkdir /dev/log
+# ln /dev/log_main /dev/log/main
+# ln /dev/log_events /dev/log/events
+# ln /dev/log_radio /dev/log/radio
+
+# ./logcat -v long '*:*'    # tty1
+# ./ServiceManager          # tty2
+# ./SurfaceFlinger          # tty3
+# export ANDROID_ROOT=/system; ./BootAnimation      # tty4
+
+
+---------IGNORE BELOW ---------------------------------
+Some notes:
 
 export ANDROID_ROOT=/system
 #export ANDROID_DATA=/data
@@ -28,3 +60,4 @@ export ANDROID_ROOT=/system
 
 AssetManager::addDefaultAssets()
     $ANDROID_ROOT/framework/framework-res.apk
+
