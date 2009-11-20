@@ -31,15 +31,10 @@ On your test machine(you can test with VirtualBox):
 3. run
 
 # aptitude install v86d     # required by uvesafb
-# modprobe uvesafb
-# modprobe logger
-# ln /dev/log /dev/log2
-# rm /dev/log
-# mkdir /dev/log
-# ln /dev/log_main /dev/log/main
-# ln /dev/log_events /dev/log/events
-# ln /dev/log_radio /dev/log/radio
+# ./init.sh
 
+# cd build/bin
+# cp -r ../../x86/frameworks/base/core/res/assets .     # required by BootAnimation
 # ./logcat -v long '*:*'    # tty1
 # ./ServiceManager          # tty2
 # ./SurfaceFlinger          # tty3
